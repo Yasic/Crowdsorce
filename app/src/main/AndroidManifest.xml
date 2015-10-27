@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tesmple.crowdsource" >
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:name=".activity.App"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".activity.RegisterActivity">
+
+        </activity>
+        <activity android:name=".activity.ForgetPasswordActivity">
+
+        </activity>
+        <activity android:name=".activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity">
+        </activity>
+        <activity android:name=".activity.PostRequestActivity">
+        </activity>
+        <activity android:name=".activity.PerfectInformationActivity">
+        </activity>
+        <activity android:name=".activity.PostBillSuccessful">
+        </activity>
+        <activity
+            android:name=".activity.RequestDetailOfPublisher"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".activity.RequestDetailOfApplicant"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity android:name=".activity.RequestDetailOfApplicanted">
+        </activity>
+        <activity android:name=".activity.NotificationActivity">
+
+        </activity>
+        <activity android:name=".activity.SettingActivity">
+
+        </activity>
+        <activity android:name=".activity.ConfirmSuccessfullyActivity">
+
+        </activity>
+        <service android:name="com.avos.avoscloud.PushService"
+                 android:exported="false"/>
+        <receiver android:name=".receiver.PushReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.avos.UPDATE_STATUS" />
+                <action android:name="com.tesmple.action"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

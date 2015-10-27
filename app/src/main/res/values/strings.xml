@@ -1,0 +1,170 @@
+<resources>
+    <string name="app_name">校园众包</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">登陆账户</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="register">注册</string>
+
+    <string name="action_sign_in_short">登陆</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_phone">请输入正确的手机号</string>
+    <string name="error_invalid_password">请输入正确的密码</string>
+    <string name="error_password_should_be">密码应为6~16位的数字与字母</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="login_acount">账户</string>
+    <string name="login_password">密码</string>
+    <string name="action_login_forgetpassword">忘记密码？</string>
+    <string name="action_login_register">注册账号</string>
+    <string name="phone_num">手机号</string>
+    <string name="prove_code">验证码</string>
+    <string name="get_prove_code">获取验证码</string>
+    <string name="know_and_agree">我已了解并同意《</string>
+    <string name="school_crowdresource_agreement">校园众包用户条约</string>
+    <string name="book_title_mark">》</string>
+    <string name="input_right_phone">请输入正确的手机号！</string>
+    <string name="sending">发送中…</string>
+    <string name="phone_has_registered">手机号已经注册过！</string>
+    <string name="please_check_your_network">请检查您的网络！</string>
+    <string name="send_successfully">发送成功！</string>
+    <string name="so_frequently">您的请求过于频繁！</string>
+    <string name="error_phone_required">This phone is required</string>
+    <string name="nimabi">你麻痹我看你冲不冲突</string>
+    <string name="fuckgithub">fuckgithub</string>
+    <string name="error_phone_not_register">当前号码尚未注册</string>
+    <string name="forgetpassword_newpassword">新密码：</string>
+    <string name="forgetpassword_confirmpassword">再输一次：</string>
+    <string name="forgetpassword_bt_savepassword">保存</string>
+    <string name="error_newpassword_notsame">两次输入的密码不相同</string>
+    <string name="error_provecode">请输入正确的验证码</string>
+    <string name="error_phonenotprove">当前手机号码未验证</string>
+    <string name="real_app_name">校园众包</string>
+    <string name="tv_deadline">截止时间：</string>
+    <string name="tv_description">具体描述：</string>
+    <string name="tv_contactway">联系途径：</string>
+    <string name="rb_phonenumer">电话</string>
+    <string name="rb_message">短信</string>
+    <string name="rb_replyinapp">站内回复</string>
+    <string name="grabbill_mode">抢单模式</string>
+    <string name="receivebill_mode">接单模式</string>
+    <string name="postbill">发布</string>
+    <string name="error_invalid_provr_code">验证码不匹配或过期</string>
+    <string name="register_successfully">注册成功！</string>
+    <string name="error_please_check_agreement">请仔细阅读《校园众包用户条约》并进行勾选</string>
+    <string name="prompt_place">所在地</string>
+    <string name="perfect_information">完善资料</string>
+    <string name="prompt_please_choose_place">请选择地区</string>
+    <string name="prompt_school">院校</string>
+    <string name="prompt_please_choose_school">请选择院校</string>
+    <string name="prompt_stu_num">学号</string>
+    <string name="prompt_please_input_stu_num">输入学号</string>
+    <string name="prompt_please_input_password">请输入学号的密码</string>
+    <string name="prompt_sure">确认</string>
+    <string name="prompt_cancel">取消</string>
+    <string name="beijin">北京市</string>
+    <string name="place">四川省成都市</string>
+    <string name="uestc">电子科技大学</string>
+    <string name="error_please_input_stu_num">请输入学号</string>
+    <string name="error_please_input_password">请输入密码</string>
+
+    <string name="bill_status_waitingforapplicant">待报名</string>
+    <string name="bill_status_underway">进行中</string>
+    <string name="bill_status_completed">已完成</string>
+    <string name="bill_status_deleted">已删除</string>
+
+    <string name="bill_robtype_grabbillmode">抢单模式</string>
+    <string name="bill_robtype_receivebillmode">接单模式</string>
+    <string name="tv_putaward">支付报酬：</string>
+    <string name="tv_robtype">模式：</string>
+    <string name="postbillsuccessful_textone">恭喜您发布成功，</string>
+    <string name="postbillsuccessful_texttwo">稍等片刻，马上会有同学接单。</string>
+    <string name="tv_lasttime">剩余时间</string>
+    <string name="hour">小时</string>
+    <string name="minute">分钟</string>
+    <string name="second">秒</string>
+    <string name="error_invalid_stu_num">学号或密码错误</string>
+    <string name="error_prove_code_should_be">验证码应为六位数字</string>
+    <string name="acceptable_bill">可接订单</string>
+    <string name="my_publish">我的发布</string>
+    <string name="accepted_bill">已抢订单</string>
+    <string name="test_name">loading..</string>
+    <string name="test_actioning">进行中</string>
+    <string name="test_bill_detail">帮忙#占座#，#大物讲座#，#A308#帮忙#占座#，#大物讲座#，#A308#帮忙#占座#，#大物讲座#，#A308#</string>
+    <string name="rmb">¥</string>
+    <string name="test_award">1</string>
+    <string name="prompt_look_detail">\t查看详情\t</string>
+    <string name="prompt_left_time">剩余时间</string>
+    <string name="test_hour">01</string>
+    <string name="prompt_hour">小时</string>
+    <string name="test_minutes">14</string>
+    <string name="prompt_minutes">分钟</string>
+    <string name="test_second">45</string>
+    <string name="prompt_second">秒</string>
+    <string name="add">=</string>
+    <string name="prompt_people">人</string>
+    <string name="prompt_applicant">报名</string>
+    <string name="prompt_notification">通知</string>
+    <string name="comment_et_addcomment">添加评论</string>
+    <string name="comment_bt_commit">发表</string>
+    <string name="uestc_info_door">电子科技大学信息门户</string>
+    <string name="prompt_nickname">昵称</string>
+    <string name="prompt_please_input_nickname">输入昵称</string>
+    <string name="error_please_input_nickname">请输入昵称</string>
+    <string name="man">男</string>
+    <string name="error_stu_num_exist">您输入的学号已注册！</string>
+    <string name="hint_billdetailinput">输入#可以添加标签哦</string>
+    <string name="push_become_applicant">我报名了你的任务，快来选择我吧</string>
+    <string name="push_become_confirmer">我已指派你来完成我的任务，注意时间哦！</string>
+    <string name="push_not_become_applicant">嘿嘿，我已经把任务指派给其他人，下次合作吧^-^</string>
+    <string name="push_have_robbed">我已成功抢单，合作愉快~</string>
+    <string name="push_publisher_remove_bill">不好意思T_T，临时有些事情，耽误你的时间了</string>
+    <string name="push_confirmer_remove_bill">不好意思T_T，临时有些事情，不能继续完成你发的任务了，你可以通过本页下面的“重新发布”按键重新发布任务</string>
+    <string name="push_finish_bill">十分感谢帮我完成任务！收到报酬了么^_^</string>
+    <string name="push_remind_publisher">快到达你所规定的截至时间啦，如果对方完成任务记得确认哦，如果对方未完成也一定要通知我们哦，请尽快做出选择</string>
+    <string name="push_system_finish">由于在截至时间后的24小时您一直未做出评价，系统已帮您确认，如有任何问题请联系我们</string>
+    <string name="test_time">一分钟前</string>
+    <string name="please_input_right_award">请输入正确的支付报酬(仅限数字)</string>
+    <string name="bill_description_cannot_be_empty">订单详情不能为空哦</string>
+    <string name="billDeadLine">billDeadLine</string>
+    <string name="prompt_new_notification">通知\t\t(有新通知)</string>
+    <string name="prompt_point">.</string>
+    <string name="btr_post_application">我来帮Ta</string>
+    <string name="btr_cancel_bill">取消任务</string>
+    <string name="btr_cancel_application">取消报名</string>
+    <string name="prompt_just_now">刚刚</string>
+    <string name="prompt_how_many_minutes">%1$s之前</string>
+    <string name="prompt_one_day_ago">一天前</string>
+    <string name="prompt_waiting">请稍等。。。</string>
+    <string name="test_department">通信与信息工程学院\n通信工程（大类招生）</string>
+    <string name="enter">\n</string>
+    <string name="prompt_setting">设置</string>
+    <string name="prompt_remind">提示</string>
+    <string name="prompt_let_be_confirmer">选择%1$s成为您的接单者?</string>
+    <string name="prompt_choose_successfully">选择成功</string>
+    <string name="prompt_confirm_successfully">恭喜您，已经有同学接单了\n请耐心等待他完成任务</string>
+    <string name="prompt_confirm_successflly">指派成功</string>
+    <string name="delete">delete</string>
+    <string name="prompt_head_portrait">头像</string>
+    <string name="test_nick_name">罗小羊</string>
+    <string name="test_stu_num">2014010999099</string>
+    <string name="prompt_gender">性别</string>
+    <string name="prompt_save">保存</string>
+    <string name="input_new_name">输入新的昵称</string>
+    <string name="please_choose_type">请选择方式</string>
+
+    <array name="get_photo_type">
+        <item>拍照</item>
+        <item>图库</item>
+    </array>
+</resources>
