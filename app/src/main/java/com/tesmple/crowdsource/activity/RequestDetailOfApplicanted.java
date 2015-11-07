@@ -22,6 +22,10 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.FindCallback;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.tesmple.crowdsource.R;
@@ -31,6 +35,7 @@ import com.tesmple.crowdsource.fragment.AcceptedBillFragment;
 import com.tesmple.crowdsource.fragment.BillCommentFragment;
 import com.tesmple.crowdsource.fragment.MyPublishFragment;
 import com.tesmple.crowdsource.object.Bill;
+import com.tesmple.crowdsource.utils.ActivityCollector;
 import com.tesmple.crowdsource.utils.BillCommentUtils;
 import com.tesmple.crowdsource.utils.BillUtils;
 import com.tesmple.crowdsource.utils.PushUtils;
@@ -175,6 +180,8 @@ public class RequestDetailOfApplicanted extends AppCompatActivity {
                 case StringUtils.CHANGE_BILL_STATUS_SUCCESSFULLY:
                     if(bill.getStatus().equals(StringUtils.BILL_STATUS_FOUR)){
                         PushUtils.startPushTransaction(handler,StringUtils.PUSH_CONFIRMER_REMOVE_BILL,bill);
+                        Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:" + bill.getPublisherPhone()));
+                        startActivity(intent);
                     }
                     finish();
                     break;
@@ -213,6 +220,7 @@ public class RequestDetailOfApplicanted extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requestdetailofapplicanted);
+        ActivityCollector.addActivity(RequestDetailOfApplicanted.this);
         initView();
         initToolbar();
         getBundle();
@@ -340,8 +348,28 @@ public class RequestDetailOfApplicanted extends AppCompatActivity {
      * 设置bill详情
      */
     private void setView(){
-        sdvHeadPortrait.setImageURI(Uri.parse(bill.getPublisherHeadPortrait()));
-        tvName.setText(bill.getPublisherName());
+        AVQuery<AVObject> avQuery = new AVQuery<>("_User");
+        avQuery.whereEqualTo("username", bill.getPublisherPhone());
+        avQuery.setCachePolicy(AVQuery.CachePolicy.CACHE_THEN_NETWORK);
+        avQuery.findInBackground(new FindCallback<AVObject>() {
+            @Override
+            public void done(List<AVObject> list, AVException e) {
+                if (e == null) {
+                    bill.setPublisherName((String) list.get(0).get("nickname"));
+                    bill.setPublisherHeadPortrait(list.get(0).getAVFile("head_portrait").getThumbnailUrl(false, 96, 96));
+                    sdvHeadPortrait.setImageURI(Uri.parse(bill.getPublisherHeadPortrait()));
+                   tvName.setText(bill.getPublisherName());
+
+                } else {
+                    Log.e("RequestDetailAppliError", e.getMessage() + "===" + e.getCode());
+                    //没有缓存数据
+                    if (e.getCode() != 120) {
+                        Snackbar.make(sdvHeadPortrait, R.string.please_check_your_network, Snackbar.LENGTH_SHORT)
+                                .setAction("Action", null).show();
+                    }
+                }
+            }
+        });
         tvSchool.setText(bill.getPublisherSchool());
         tvStatus.setText(bill.getStatus());
         tvDetail.setText(bill.getDetail());
@@ -455,6 +483,7 @@ public class RequestDetailOfApplicanted extends AppCompatActivity {
         tvInstead.setVisibility(View.GONE);
         tvInstead.setHeight(444);
         ButtonFlat btflatUpOrDown = (ButtonFlat)findViewById(R.id.btflat_up_or_down);
+        btflatUpOrDown.setRippleSpeed(60.0f);
         btflatUpOrDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -531,4 +560,9 @@ public class RequestDetailOfApplicanted extends AppCompatActivity {
         BillUtils.changeBillStatus(handler, bill, StringUtils.BILL_STATUS_FOUR);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
 }

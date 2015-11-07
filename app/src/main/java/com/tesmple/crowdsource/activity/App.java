@@ -1,10 +1,8 @@
 package com.tesmple.crowdsource.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -13,11 +11,8 @@ import com.avos.avoscloud.PushService;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.gc.materialdesign.views.ProgressBarCircularIndeterminate;
 import com.tesmple.crowdsource.R;
-import com.tesmple.crowdsource.fragment.AcceptableBillFragment;
-import com.tesmple.crowdsource.object.NotificationLab;
-import com.tesmple.crowdsource.utils.StringUtils;
 
-import dmax.dialog.SpotsDialog;
+import im.fir.sdk.FIR;
 
 /**
  * Created by lypeer on 10/7/2015.
@@ -43,53 +38,9 @@ public class App extends Application {
      */
     private static ProgressBarCircularIndeterminate proBarProgress;
 
-//    /**
-//     * AcceptableBill界面的进度条外部layout
-//     */
-//    private static LinearLayout llProgressbarAcceptableBill;
-//
-//    /**
-//     * AcceptableBill界面的进度条外部layout底下的那个linearlayout
-//     */
-//    private static LinearLayout llBackgroundAcceptableBill;
-//
-//    /**
-//     * AcceptableBill界面的加载progressBar
-//     */
-//    private static ProgressBarCircularIndeterminate proBarProgressAcceptableBill;
-//
-//    /**
-//     * AcceptedBill界面的进度条外部layout
-//     */
-//    private static LinearLayout llProgressbarAcceptedBill;
-//
-//    /**
-//     * AcceptedBill界面的进度条外部layout底下的那个linearlayout
-//     */
-//    private static LinearLayout llBackgroundAcceptedBill;
-//
-//    /**
-//     * AcceptedBill界面的加载progressBar
-//     */
-//    private static ProgressBarCircularIndeterminate proBarProgressAcceptedBill;
-//
-//    /**
-//     * MyPublish界面的进度条外部layout
-//     */
-//    private static LinearLayout llProgressbarMyPublish;
-//
-//    /**
-//     * MyPublish界面的进度条外部layout底下的那个linearlayout
-//     */
-//    private static LinearLayout llBackgroundMyPublish;
-//
-//    /**
-//     * MyPublish界面的加载progressBar
-//     */
-//    private static ProgressBarCircularIndeterminate proBarProgressMyPublish;
-
     @Override
     public void onCreate() {
+        FIR.init(this);
         super.onCreate();
         mAppContext = getApplicationContext();
         AVOSCloud.initialize(this, "ToU9po43RDw6nyqcjzPL57si", "GiI6qViVwvAsCpz46SjLarm2");
@@ -178,7 +129,8 @@ public class App extends Application {
      * 隐藏正在加载的dialog
      */
     public static void dismissDialog() {
-        llBackground.setVisibility(View.GONE);
+        llBackground.setAlpha(0.0f);
+//        llBackground.setVisibility(View.GONE);
         llProgressbar.setVisibility(View.GONE);
     }
 
